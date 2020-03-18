@@ -1,16 +1,3 @@
-<?php include '../main/header.php'; ?>
-<form action="register.php" method="POST">
-Name
-<input type="text" name="name"><br/>
-Email
-<input type="email" name="email"><br/>
-Password
-<input type="password" name="password"><br/>
-<button type="submit">Register</button>
-</form>
-
-<a href="index.php">have an account? Login now!</a>
-
 <?php
 $dbserver = "localhost";
 $dbname= "ceh";
@@ -49,4 +36,34 @@ if(isset($_POST['name'])&&isset($_POST['email'])&&isset($_POST['password'])){
 }
 
 $conn -> close();
+include '../main/header.php';
 ?>
+
+    <br><br>
+    <div>
+        <h1><b>SQL Injection</b></h1>
+    </div>
+    <div class="border">
+        <div class="Title">
+            <b><h1>Register</h1></b>
+        </div>
+        <form action="register.php" method="POST">
+            <div class="name">
+                Name
+                <input class="rounded"type="text" name="name"><br/>
+            </div>
+            <div class="email">
+                Email
+                <input class="rounded" type="email" name="email"><br/>
+            </div>
+            <div class="password">
+                Password
+                <input class="rounded" type="password" name="password"><br/>
+            </div>
+            <div class="submitdiv">
+                <button class="black"type="submit">Register</button>
+            </div>
+        </form>
+        <div>
+            <p style="margin-left: 30%; margin-top: 20px;">have an account? <a href="index.php">Login now!</a></p>
+        </div>

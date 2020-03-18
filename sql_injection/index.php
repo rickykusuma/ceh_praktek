@@ -37,13 +37,27 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
 }
 ?>
 <?php include '../main/header.php'; ?>
-<form action="index.php" method="POST">
-Email
-<input type="email" name="email"><br/>
-Password
-<input type="password" name="password"><br/>
-<button type="submit">Login</button>
-</form>
-
-<a href="register.php">don't have an account? Register now!</a>
-
+    <br><br>
+    <div>
+        <h1><b>SQL Injection</b></h1>
+    </div>
+    <div class="border">
+    <div class="Title">
+        <b><h1>Login</h1></b>
+    </div>
+    <form action="index.php" method="POST">
+        <div class="email">
+            Email
+            <input class="rounded" type="email" name="email"><br/>
+        </div>
+        <div class="password">
+            Password
+            <input class="rounded" type="password" name="password"><br/>
+        </div>
+        <div class="submitdiv">
+            <button class="black"type="submit">Login</button>
+        </div>
+    </form>
+    <div>
+        <p style="margin-left: 25%; margin-top: 20px;">haven't an account? <a href="register.php">Register now!</a></p>
+    </div>

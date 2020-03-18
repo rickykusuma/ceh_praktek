@@ -9,8 +9,9 @@
 	$dbuser = "root";
 	$dbpw = "";
 	$conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
-	if(isset($_GET['sid'])){
-	    $sid = $_GET['sid'];
+	if(isset($_COOKIE['sid'])){
+		$sid = $_COOKIE['sid'];
+
 	    $sql = "SELECT * FROM users WHERE sid = '".$sid."'";
 	    $result = $conn->query($sql);
 

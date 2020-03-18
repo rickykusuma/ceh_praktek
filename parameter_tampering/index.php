@@ -18,15 +18,15 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
                 if($row['password'] == $password){
                     $sid = $row['sid'];
                     setcookie("sid",$sid);
-                    echo "<script>window.location.href='hai.php'</script>";
+                    echo "<script>window.location.href='hai.php?sid=".$sid."'</script>";
                     break;
                 }else{
                     echo "<b style='color:red;'>wrong email or password</b>";
                     break;
                 }
-            } 
+            }
         }
-    } 
+    }
 }
 ?>
 <?php include'header.php';?>

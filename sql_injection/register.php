@@ -1,3 +1,4 @@
+<?php include '../main/header.php'; ?>
 <form action="register.php" method="POST">
 Name
 <input type="text" name="name"><br/>

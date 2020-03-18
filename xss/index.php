@@ -1,3 +1,4 @@
+<?php include '../main/header.php'; ?>
 <form action="index.php" method="POST">
     <input type="text" name="text" placeholder="write something"><br>
     <button onclick="show()">show </button><br>

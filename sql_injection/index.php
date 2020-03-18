@@ -1,15 +1,7 @@
-<?php include '../main/header.php'; ?>
-<form action="index.php" method="POST">
-Email
-<input type="email" name="email"><br/>
-Password
-<input type="password" name="password"><br/>
-<button type="submit">Login</button>
-</form>
-
-<a href="register.php">don't have an account? Register now!</a>
-
 <?php
+if(isset($_SESSION['sid'])){
+    session_destroy();
+}
 $dbserver = "localhost";
 $dbname= "ceh";
 $dbuser = "root";
@@ -22,22 +14,6 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
 
     $sql = "SELECT * FROM users";
     $result = $conn->query($sql);
-
-    if($result->num_rows > 0){
-        while($row = $result -> fetch_assoc()){
-            if($row['email'] == $email){
-                if($row['password'] == $password){
-                    session_start();
-                    $_SESSION['sid'] = $row['sid'];
-                    echo "<script>window.location.href='hai.php'</script>";
-                    break;
-                }else{
-                    echo "<b style='color:red;'>wrong email or password</b>";
-                    break;
-                }
-            } 
-        }
-    } 
     if ($conn->multi_query("SELECT * FROM users where email = '$email'")) {
         do {
             if ($result = $conn->store_result()) {
@@ -59,3 +35,15 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
         } while ($conn->next_result());
     }
 }
+?>
+<?php include '../main/header.php'; ?>
+<form action="index.php" method="POST">
+Email
+<input type="email" name="email"><br/>
+Password
+<input type="password" name="password"><br/>
+<button type="submit">Login</button>
+</form>
+
+<a href="register.php">don't have an account? Register now!</a>
+

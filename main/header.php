@@ -132,10 +132,10 @@
                         <a class="white" href="../parameter_tampering/index.php">Parameter Tampering</a>
                     </li>
                     <li class="nav-item">
-                        <a class="white" href="sql_injection/index.php">SQL Injection</a>
+                        <a class="white" href="../sql_injection/index.php">SQL Injection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="white" href="xss/index.php">XSS</a>
+                        <a class="white" href="../xss/index.php">XSS</a>
                     </li>
                 </ul>
             </div>

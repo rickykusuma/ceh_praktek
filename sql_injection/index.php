@@ -1,63 +1,59 @@
 <?php
-if(isset($_SESSION['sid'])){
-    session_destroy();
-}
-$dbserver = "localhost";
-$dbname= "ceh";
-$dbuser = "root";
-$dbpw = "";
-$conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
+    setcookie('flag','64_Q0VIVVRTe1czYnMxdDNOeTRfVnUxTjNyYThMM30K');
 
-if(isset($_POST['email'])&&isset($_POST['password'])){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    $sql = "SELECT * FROM users";
-    $result = $conn->query($sql);
-    if ($conn->multi_query("SELECT * FROM users where email = '$email'")) {
-        do {
-            if ($result = $conn->store_result()) {
-                while ($row = $result->fetch_row()) {
-                    session_start();
-                    $_SESSION['sid'] = $row[3];
-                    if($password == $row[2]){
-                        echo "<script>window.location.href='hai.php'</script>";
-                        break;
-                    }else{
-                        echo "<b style='color:red;'>wrong email or password</b>";
-                        break;
-                    }
-                }
-                $result->free();
-            }
-            if ($conn->more_results()) {
-            }
-        } while ($conn->next_result());
-    }
-}
+    include '../main/header.php';
 ?>
-<?php include '../main/header.php'; ?>
-    <br><br>
-    <div>
-        <h1><b>SQL Injection</b></h1>
+<form action="index.php" method="POST">
+    <input type="text" name="name" id='name' placeholder="Search Item"><br>
+    <button type="submit">show </button><br>
+</form>
+<div class="container">
+  <div class="row">
+    <?php
+        if(isset($_SESSION['sid'])){
+            session_destroy();
+        }
+        $dbserver = "localhost";
+        $dbname= "ceh";
+        $dbuser = "root";
+        $dbpw = "";
+        $conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
+        $sql = "SELECT * FROM products";
+            $result = $conn->query($sql);
+            if(!isset($_POST['name'])){
+                while ($row = $result->fetch_row()) {
+                echo '<div class="col-md-4">
+                        <img class="" src="../gambar/'.$row[6].'"style="width:100%; height:200px">
+                        <div class="">
+                            <p class="">'.$row[1].'</>
+                            <h4>Rp. '.$row[4].',00</h4>
+                        </div>
+                    </div>';
+                }
+            }
+        else{
+            $name = $_POST['name'];
+
+            if ($conn->multi_query("SELECT * FROM products where Name LIKE '%$name%' && status = 1 GROUP by Name")) {
+                do {
+                    if ($result = $conn->store_result()) {
+                        while ($row = $result->fetch_row()) {
+
+                            echo '<div class="col-md-4">
+                                    <img class="" src="../gambar/'.$row[6].'"style="width:100%; height:200px">
+                                    <div class="">
+                                        <p class="">'.$row[1].'</>
+                                        <h4>Rp. '.$row[4].',00</h4>
+                                    </div>
+                                </div>';
+                        }
+                        $result->free();
+                    }
+                    if ($conn->more_results()) {
+                    }
+                } while ($conn->next_result());
+            }
+        }
+    ?>
     </div>
-    <div class="border">
-    <div class="Title">
-        <b><h1>Login</h1></b>
-    </div>
-    <form action="index.php" method="POST">
-        <div class="email">
-            Email
-            <input class="rounded" type="email" name="email"><br/>
-        </div>
-        <div class="password">
-            Password
-            <input class="rounded" type="password" name="password"><br/>
-        </div>
-        <div class="submitdiv">
-            <button class="black"type="submit">Login</button>
-        </div>
-    </form>
-    <div>
-        <p style="margin-left: 25%; margin-top: 20px;">haven't an account? <a href="register.php">Register now!</a></p>
-    </div>
+</div>

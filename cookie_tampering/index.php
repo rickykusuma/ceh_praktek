@@ -140,9 +140,6 @@
                 </ul>
             </div>
         </nav>
-=======
-<?php include '../main/header.php'?>
->>>>>>> 835d5cb80e211f4ff9a922903f318cef2373774f
         <br><br>
         <div>
             <h1><b>Cookie Manipulation</b></h1>

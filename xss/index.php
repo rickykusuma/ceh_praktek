@@ -2,27 +2,25 @@
     setcookie('flag','64_Q0VIVVRTe1czYnMxdDNOeTRfVnUxTjNyYThMM30K');
 
     include '../main/header.php';
+    
 ?>
-<form action="index.php" method="POST">
-    <input type="text" name="text" placeholder="write something"><br>
-    <button onclick="show()">show </button><br>
-</form>
 <br><br>
     <div>
         <h1><b>Cross-site Scripting</b></h1>
     </div>
     <div class="border">
         <form action="index.php" method="POST">
-            <div class="name">
+            <div class="name" style="margin-left:30%;margin-top:10%;margin-bottom:10%;">
                 <input class="rounded" type="text" name="text" placeholder="Type Something"><br/>
             </div>
             <div class="submitdiv">
-                <button class="black" onclick="show()">Show</button>
+                <button class="black" style="margin-bottom:10%;">Show</button>
             </div>
         </form>
-<p class="center" style="margin-left:30%; color:black;" id="text"></p>
+        <div style="text-align:center; word-wrap: break-word;" id="text"></div>
+    </div>  
 <?php
     if(isset($_POST['text'])){
-        echo "<b style='color:red'>".$_POST['text']."</b>";
+        echo "<script>document.getElementById(\"text\").innerHTML = \"".$_POST['text']."\";</script>";
     }
 ?>

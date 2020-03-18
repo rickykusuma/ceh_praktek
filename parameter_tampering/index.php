@@ -5,15 +5,7 @@ $dbuser = "root";
 $dbpw = "";
 $conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
 
-if(isset($_POST['email'])&&isset($_POST['password'])){
-    $email = $_POST['email'];
-    $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users";
-    $result = $conn->query($sql);
-
-    
-}
 ?>
 <?php include'../main/header.php';?>
 <br><br>
@@ -41,18 +33,27 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
             <p style="margin-left: 25%; margin-top: 20px;">haven't an account? <a href="register.php">Register now!</a></p>
         </div>
         <?php
-        if($result->num_rows > 0){
-            while($row = $result -> fetch_assoc()){
-                if($row['email'] == $email){
-                    if($row['password'] == $password){
-                        $sid = $row['sid'];
-                        echo "<script>window.location.href='hai.php?sid=".$sid."'</script>";
-                        break;
-                    }else{
-                        echo "<b style='color:red;'>wrong email or password</b>";
-                        break;
-                    }
-                } 
-            }
-        } 
+        if(isset($_POST['email'])&&isset($_POST['password'])){
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+        
+            $sql = "SELECT * FROM users";
+            $result = $conn->query($sql);
+        
+            if($result->num_rows > 0){
+                while($row = $result -> fetch_assoc()){
+                    if($row['email'] == $email){
+                        if($row['password'] == $password){
+                            $sid = $row['sid'];
+                            echo "<script>window.location.href='hai.php?sid=".$sid."'</script>";
+                            break;
+                        }else{
+                            echo "<b style='color:red;'>wrong email or password</b>";
+                            break;
+                        }
+                    } 
+                }
+            } 
+        }
+        
         ?>

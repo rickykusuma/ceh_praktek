@@ -1,3 +1,4 @@
+<?php include '../main/header.php'; ?>
 <?php
 $dbserver = "localhost";
 $dbname= "ceh";

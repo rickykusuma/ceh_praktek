@@ -1,4 +1,4 @@
-        <?php include '../header.php'?>
+        <?php include '../main/header.php'?>
         <br><br>
 		<?php
 		$dbserver = "localhost";

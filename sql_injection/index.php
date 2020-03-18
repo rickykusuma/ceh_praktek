@@ -1,3 +1,4 @@
+<?php include '../main/header.php'; ?>
 <form action="index.php" method="POST">
 Email
 <input type="email" name="email"><br/>

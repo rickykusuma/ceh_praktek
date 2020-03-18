@@ -29,7 +29,7 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
     } 
 }
 ?>
-<?php include'../main/header.php';?>
+<?php include'header.php';?>
 <br><br>
     <div>
         <h1><b>Parameter Tampering</b></h1>

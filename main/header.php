@@ -36,16 +36,11 @@
         .item{
             background-color: black;
         }
-        .active{
-            color:grey;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 8px;
+        .active:after, .li:hover:after{
+            content: "";
             display: block;
-        }
-        .active:hover{
-            text-decoration: none;
-            color:white;
+            background-color: #6195FF;
+            height: 2px;
         }
         a.white{
             text-decoration: none;
@@ -121,22 +116,33 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav kanan">
-                    <li class="nav-item">
+                <ul class="navbar-nav kanan" id="test">
+                    <li class="nav-item li active">
                         <a href="../main/index.php" class="white">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item li">
                         <a class="white" href="../cookie_tampering/index.php">Cookie Tampering</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item li">
                         <a class="white" href="../parameter_tampering/index.php">Parameter Tampering</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item li">
                         <a class="white" href="../sql_injection/index.php">SQL Injection</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item li">
                         <a class="white" href="../xss/index.php">XSS</a>
                     </li>
                 </ul>
-            </div>
+            </div>  
+            <script>
+                var header = document.getElementById("test");
+                var btns = header.getElementsByClassName("li");
+                for (var i = 0; i < btns.length; i++) {
+                    btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                    });
+                }
+            </script>
         </nav>

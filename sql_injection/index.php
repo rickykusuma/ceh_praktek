@@ -3,10 +3,21 @@
 
     include '../main/header.php';
 ?>
-<form action="index.php" method="POST">
+<style type="text/css">
+    input[type=text]{
+        width: 100%;
+        border-radius: 4px;
+        text-align: center;
+    } 
+</style>
+<br><br>
+<div class='container center' style="text-align:center">
+<h1 style="text-align: center">Search Your Item Here</h1>
+<form action="index.php" method="POST" >
     <input type="text" name="name" id='name' placeholder="Search Item"><br>
-    <button type="submit">show </button><br>
+    <button class="btn-success " style="margin:15px; padding-left:30px ;padding-right:30px; border:solid 0px; border-radius:4px" type="submit">Search </button><br>
 </form>
+</div>
 <div class="container">
   <div class="row">
     <?php

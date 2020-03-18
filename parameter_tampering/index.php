@@ -12,21 +12,7 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
     $sql = "SELECT * FROM users";
     $result = $conn->query($sql);
 
-    if($result->num_rows > 0){
-        while($row = $result -> fetch_assoc()){
-            if($row['email'] == $email){
-                if($row['password'] == $password){
-                    $sid = $row['sid'];
-                    setcookie("sid",$sid);
-                    echo "<script>window.location.href='hai.php?sid=".$sid."'</script>";
-                    break;
-                }else{
-                    echo "<b style='color:red;'>wrong email or password</b>";
-                    break;
-                }
-            }
-        }
-    }
+    
 }
 ?>
 <?php include'../main/header.php';?>
@@ -54,3 +40,19 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
         <div>
             <p style="margin-left: 25%; margin-top: 20px;">haven't an account? <a href="register.php">Register now!</a></p>
         </div>
+        <?php
+        if($result->num_rows > 0){
+            while($row = $result -> fetch_assoc()){
+                if($row['email'] == $email){
+                    if($row['password'] == $password){
+                        $sid = $row['sid'];
+                        echo "<script>window.location.href='hai.php?sid=".$sid."'</script>";
+                        break;
+                    }else{
+                        echo "<b style='color:red;'>wrong email or password</b>";
+                        break;
+                    }
+                } 
+            }
+        } 
+        ?>

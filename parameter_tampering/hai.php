@@ -1,7 +1,7 @@
-<?php include 'header.php';?>
+<?php include '../main/header.php';?>
 <br><br>
 <div>
-    <h1><b>Cookie Manipulation</b></h1>
+    <h1><b>Parameter Tampering</b></h1>
 </div>
 <?php
 	$dbserver = "localhost";
@@ -9,16 +9,13 @@
 	$dbuser = "root";
 	$dbpw = "";
 	$conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
-	if(isset($_COOKIE['sid'])){
-		$sid = $_COOKIE['sid'];
-
+	if(isset($_GET['sid'])){
+	    $sid = $_GET['sid'];
 	    $sql = "SELECT * FROM users WHERE sid = '".$sid."'";
 	    $result = $conn->query($sql);
 
 	    while($row = $result -> fetch_assoc()){
 	        echo "<h1><b>Halo, ".$row['name']."</b></h1>";
 	    }
-	} else {
-	    echo "<script>window.location.href='index.php'</script>";
-	}
+	} 
 ?>

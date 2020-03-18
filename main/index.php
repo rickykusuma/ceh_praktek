@@ -1,4 +1,4 @@
-<?php include '../header.php'?>
+<?php include 'header.php'?>
     <div class="center">
         <h1><b>Nama Anggota :</b></h1>
         <h2><b>Aaron Effendi <br></b></h2>

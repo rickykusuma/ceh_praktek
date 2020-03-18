@@ -126,7 +126,7 @@
                         <a class="white" href="../cookie_tampering/index.php">Cookie Tampering</a>
                     </li>
                     <li class="nav-item">
-                        <a class="white" href="../parameter_tampering/index.php">Parameter Tampering</a>
+                        <a class="active" href="../parameter_tampering/index.php">Parameter Tampering</a>
                     </li>
                     <li class="nav-item">
                         <a class="white" href="sql_injection/index.php">SQL Injection</a>

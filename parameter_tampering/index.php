@@ -1,29 +1,3 @@
-<?php include '../main/header.php'?>
-        <br><br>
-        <div>
-            <h1><b>Parameter Tampering</b></h1>
-        </div>
-        <div class="border">
-            <div>
-                <b><h1>Login</h1></b>
-            </div>
-            <form action="index.php" method="POST">
-                <div class="email">
-                    Email
-                    <input class="rounded" type="email" name="email"><br/>
-                </div>
-                <div class="password">
-                    Password
-                    <input class="rounded" type="password" name="password"><br/>
-                </div>
-                <div class="submitdiv">
-                    <button class="black"type="submit">Login</button>
-                </div>
-            </form>
-            <div>
-                <p style="margin-left: 25%; margin-top: 20px;">haven't an account? <a href="register.php">Register now!</a></p>
-            </div>
-        </div>
 <?php
 $dbserver = "localhost";
 $dbname= "ceh";
@@ -54,3 +28,29 @@ if(isset($_POST['email'])&&isset($_POST['password'])){
         }
     } 
 }
+?>
+<?php include'../main/header.php';?>
+<br><br>
+    <div>
+        <h1><b>Parameter Tampering</b></h1>
+    </div>
+    <div class="border">
+        <div class="Title">
+            <b><h1>Login</h1></b>
+        </div>
+        <form action="index.php" method="POST">
+            <div class="email">
+                Email
+                <input class="rounded" type="email" name="email"><br/>
+            </div>
+            <div class="password">
+                Password
+                <input class="rounded" type="password" name="password"><br/>
+            </div>
+            <div class="submitdiv">
+                <button class="black"type="submit">Login</button>
+            </div>
+        </form>
+        <div>
+            <p style="margin-left: 25%; margin-top: 20px;">haven't an account? <a href="register.php">Register now!</a></p>
+        </div>

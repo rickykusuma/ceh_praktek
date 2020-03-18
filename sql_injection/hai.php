@@ -1,4 +1,3 @@
-<?php include '../main/header.php'; ?>
 <?php
 $dbserver = "localhost";
 $dbname= "ceh";
@@ -7,6 +6,7 @@ $dbpw = "";
 $conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
 
 session_start();
+include '../main/header.php';
 if(isset($_SESSION['sid'])){
     $sid = $_SESSION['sid'];
     $sql = "SELECT * FROM users WHERE sid = '".$sid."'";

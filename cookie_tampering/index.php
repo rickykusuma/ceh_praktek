@@ -114,7 +114,6 @@
     <body>
         <nav class="navbar navbar-light navbar-expand-lg item">
             <a class="navbar-brand text-white" href="../index.php">UTS CEH</a>
-            <span class="white">Ricky Andrianto Kusuma - 00000020185</span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>

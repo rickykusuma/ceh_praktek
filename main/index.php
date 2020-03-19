@@ -1,6 +1,8 @@
 <?php
 $pages='home';
-$main = "WELCOME HACKER";
+$main = "WELCOME <b class='hacked' style='color:red; margin:5px;'>HACKER</b>";
+$lg=false;
+$h2="Are you ready to try your skill? <br>as a <b style='color:red'>HACKER</b>"; 
 include 'header.php';?>
    <style>
        .hacker{

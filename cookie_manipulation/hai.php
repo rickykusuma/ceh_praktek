@@ -16,6 +16,7 @@
 		    echo "<script>window.location.href='index.php'</script>";
 		}
 		$pages='cookie';
+		$lg=true;
 		include '../main/header.php';
         include '../main/footer.php';
     ?>

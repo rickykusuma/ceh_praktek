@@ -5,7 +5,10 @@ $dbuser = "root";
 $dbpw = "";
 $conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
 $pages='parameter';
-$main = "WELCOME HACKER";
+$main = "WELCOME <b class='hacked' style='color:red; margin:5px;'>HACKER</b>";
+$lg=false;
+$h2="Try your Parameter Tempering skill here and find the <b style='color:red'>FLAG</b> here"; 
+
 include'../main/header.php';?>
     <section class="site-section bg-light aos-init aos-animate">
     <div class="row align-items-center justify-content-center">

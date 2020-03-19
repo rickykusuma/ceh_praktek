@@ -14,5 +14,6 @@ if(isset($_GET['sid'])){
 	}
 } 
 $pages='parameter';
+$lg=true;
 include '../main/header.php';
 include '../main/footer.php';?>

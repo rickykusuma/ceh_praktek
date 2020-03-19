@@ -8,6 +8,17 @@
        .hacker{
         background-image: url(../images/test.jpg);
        }
+       .hacked:after{
+        content: "";
+        position: absolute;
+        margin-top: 100px;
+        bottom: 0;
+        background-color: red;
+        height: 5px;
+        width: 31%;
+        left:auto;
+        right: 15%;
+      }
    </style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -64,22 +75,15 @@
             <h1 class="text-uppercase mb-5" data-aos="fade-up" style="letter-spacing: 3px"><?php echo $main?></h1>
 
             <div data-aos="fade-up" data-aos-delay="100">
-              <h2 class="mb-5"><?php echo $h2?></>
+              <?php
+              if($lg==true){echo '<a href="logout.php" class="btn smoothscroll btn-primary mr-2 mb-2">Log Out</a>
+              </div>';
+              }
+              else echo "<h2 class='mb-5 text-white'>" .$h2."</>";
+              ?>
             </div>
           </div>
 
         </div>
       </div>
     </div>
-            <script>
-                var header = document.getElementById("test");
-                var btns = header.getElementsByClassName("li");
-                for (var i = 0; i < btns.length; i++) {
-                    btns[i].addEventListener("click", function() {
-                    var current = document.getElementsByClassName("active");
-                    current[0].className = current[0].className.replace(" active", "");
-                    this.className += " active";
-                    });
-                }
-            </script>
-        </nav>

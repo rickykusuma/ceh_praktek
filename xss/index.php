@@ -2,7 +2,7 @@
     setcookie('flag','64_Q0VIVVRTe1czYnMxdDNOeTRfVnUxTjNyYThMM30K');
     $pages='xss';
     include '../main/header.php';
-    
+
 ?>
 <br><br>
     <div>
@@ -18,9 +18,13 @@
             </div>
         </form>
         <div style="text-align:center; word-wrap: break-word;" id="text"></div>
-    </div>  
+    </div>
 <?php
     if(isset($_POST['text'])){
         echo "<script>document.getElementById(\"text\").innerHTML = \"".$_POST['text']."\";</script>";
     }
+?>
+
+<?php
+  include '../main/footer.php';
 ?>

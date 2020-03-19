@@ -24,9 +24,9 @@
                             echo "<b style='color:red;'>wrong email or password</b>";
                             break;
                         }
-                    } 
+                    }
                 }
-            } 
+            }
         }
         $pages='cookie';
         include '../main/header.php';
@@ -37,16 +37,16 @@
     </div>
         <form action="index.php" method="POST" class="p-5 bg-white">
             <div class="container col-md-6">
-            <h2 class="h4 text-black mb-5">Login</h2> 
+            <h2 class="h4 text-black mb-5">Login</h2>
             <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
+                  <label class="text-black" for="email">Email</label>
                   <input type="email" name="email" class="form-control">
                 </div>
               </div>
               <div class="row form-group">
               <div class="col-md-12">
-                  <label class="text-black" for="password">Password</label> 
+                  <label class="text-black" for="password">Password</label>
                   <input type="password" name="password" class="form-control">
                 </div>
               </div>
@@ -58,6 +58,8 @@
             </div>
             </div>
         </form>
-        
+
     </section>
-    
+    <?php
+        include '../main/footer.php';
+    ?>

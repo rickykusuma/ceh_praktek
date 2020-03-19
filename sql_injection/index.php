@@ -8,7 +8,7 @@
         width: 100%;
         border-radius: 4px;
         text-align: center;
-    } 
+    }
 </style>
 <br><br>
 <div class='container center' style="text-align:center">
@@ -68,3 +68,7 @@
     ?>
     </div>
 </div>
+
+<?php
+  include '../main/footer.php';
+?>

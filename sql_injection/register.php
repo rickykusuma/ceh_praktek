@@ -67,3 +67,4 @@ include '../main/header.php';
         <div>
             <p style="margin-left: 30%; margin-top: 20px;">have an account? <a href="index.php">Login now!</a></p>
         </div>
+        <?php include '../main/footer.php' ?>

@@ -4,34 +4,38 @@ $dbname= "ceh";
 $dbuser = "root";
 $dbpw = "";
 $conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
-
-
-?>
-<?php include'../main/header.php';?>
-<br><br>
-    <div>
-        <h1><b>Parameter Tampering</b></h1>
+$pages='parameter';
+include'../main/header.php';?>
+    <section class="site-section bg-light aos-init aos-animate">
+    <div class="row align-items-center justify-content-center">
+        <h1 style="color:black ; margin-bottom: 30px;"><b>Parameter Tampering</b></h1>
     </div>
-    <div class="border">
-        <div class="Title">
-            <b><h1>Login</h1></b>
-        </div>
-        <form action="index.php" method="POST">
-            <div class="email">
-                Email
-                <input class="rounded" type="email" name="email"><br/>
+        <form action="index.php" method="POST" class="p-5 bg-white">
+            <div class="container col-md-6">
+            <h2 class="h4 text-black mb-5">Login</h2> 
+            <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" name="email" class="form-control">
+                </div>
+              </div>
+              <div class="row form-group">
+              <div class="col-md-12">
+                  <label class="text-black" for="password">Password</label> 
+                  <input type="password" name="password" class="form-control">
+                </div>
+              </div>
+            <div class="col-md-12">
+                <button class="btn btn-primary btn-md text-white"type="submit">Login</button>
             </div>
-            <div class="password">
-                Password
-                <input class="rounded" type="password" name="password"><br/>
+            <div class="col-md-12 row align-items-center justify-content-center">
+            <p style="margin: 20px 0px;">haven't an account? <a href="register.php">Register now!</a></p>
             </div>
-            <div class="submitdiv">
-                <button class="black"type="submit">Login</button>
             </div>
         </form>
-        <div>
-            <p style="margin-left: 25%; margin-top: 20px;">haven't an account? <a href="register.php">Register now!</a></p>
-        </div>
+        
+    </section>
+    <?php include '../main/footer.php' ?>
         <?php
         if(isset($_POST['email'])&&isset($_POST['password'])){
             $email = $_POST['email'];

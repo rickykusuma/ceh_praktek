@@ -3,137 +3,70 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <title>UTS CEH PRAKTEK</title>
-    </head>
-    <style type="text/css">
-        h2{
-            text-align: center;
-        }
-        div.name{
-            width:50%;
-            margin:auto;
-        }
-        h1{
-            text-align: center;
-            margin-bottom: 30px;
-            margin-top: 30px;
-        }
-        .right{
-            position: absolute;
-            left: 65%;
-        }
-        .white
-        {
-            color: white;
-        }
-        .kanan{
-            margin-left: auto;
-        }
-        .item{
-            background-color: black;
-        }
-        .active:after, .li:hover:after{
-            content: "";
-            display: block;
-            background-color: #6195FF;
-            height: 2px;
-        }
-        a.white{
-            text-decoration: none;
-            font-size: 16px;
-            padding: 8px;
-            display: block;
-        }
-        a.white:hover{
-            text-decoration: none;
-            color:lightgrey;
-        }
-        div.center{
-            margin:auto;
-            width:500px;
-        }
-        form{
-            margin:auto;
-        }
-        button.black{
-            background-color: lightgrey;
-            color: white;
-            width:100px;
-            border-radius: 10%;
-            margin-left: auto;
-        }
-        button:hover{
-            background-color:grey;
-            cursor:pointer;
-        }
-        div.email{
-            width:49%;
-            margin:auto;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        div.password{
-            width:60%;
-            margin:auto;
-        }
-        div.submitdiv{
-            width:100px;
-            margin:auto;
-            margin-top: 10px;
-        }
-        input.rounded{
-            border-radius: 10%;
-            box-shadow: 0px;
-            width:200px;
-            border:solid 1px lightgrey;
-        }
-        div.register{
-            text-align: center;
-            width: 50%;
-        }
-        a{
-            text-decoration: none;
-        }
-        a:hover{
-            text-decoration: none;
-        }
-        div.border{
-            margin:auto;
-            width:500px;
-            border-radius: 6px;
-            border:solid 2px lightgrey;
-        }
-    </style>
-    <body>
-        <nav class="navbar navbar-light navbar-expand-lg item">
-            <a class="navbar-brand text-white" href="../index.php">UTS CEH</a>
-            <button class="navbar-toggler" style="background-color:white;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<?php require_once "asset.php"  ?>
+  <div class="site-wrap">
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav kanan" id="test">
-                    <li class="nav-item li active">
-                        <a href="../main/index.php" class="white">Home</a>
-                    </li>
-                    <li class="nav-item li">
-                        <a class="white" href="../cookie_tampering/index.php">Cookie Tampering</a>
-                    </li>
-                    <li class="nav-item li">
-                        <a class="white" href="../parameter_tampering/index.php">Parameter Tampering</a>
-                    </li>
-                    <li class="nav-item li">
-                        <a class="white" href="../sql_injection/index.php">SQL Injection</a>
-                    </li>
-                    <li class="nav-item li">
-                        <a class="white" href="../xss/index.php">XSS</a>
-                    </li>
-                </ul>
-            </div>  
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+    
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="../main" class="mb-0">CEH 2</a></h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="../main" class="nav-link <?php if($pages=='home'){echo 'active';}?>">Home</a></li>
+                <li><a href="../cookie_manipulation" class="nav-link <?php if($pages=='cookie'){echo 'active';}?>">Cookie Manipulation</a></li>
+                <li><a href="../parameter_tampering" class="nav-link <?php if($pages=='parameter'){echo 'active';}?>">Parameter Tempering</a></li>
+                <li><a href="../sql_injection" class="nav-link <?php if($pages=='sql'){echo 'active';}?>">Sql Injection</a></li>
+                <li><a href="../xss" class="nav-link <?php if($pages=='xss'){echo 'active';}?>">XSS</a>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
+        
+        </div>
+      </div>
+      
+    </header>
+    <div class="site-blocks-cover overlay hacker" data-aos="fade" id="home-section">
+
+<div class="container">
+  <div class="row align-items-center justify-content-center">
+
+    
+    <div class="col-md-8 mt-lg-5 text-center">
+      <h1 class="text-uppercase mb-5" data-aos="fade-up" style="letter-spacing: 3px"><?php echo $main?></h1>
+      
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h2 class="mb-5"><?php echo $h2?></>
+      </div>
+    </div>
+      
+  </div>
+</div>
+
+      </div>
             <script>
                 var header = document.getElementById("test");
                 var btns = header.getElementsByClassName("li");

@@ -1,6 +1,6 @@
 <?php
     setcookie('flag','64_Q0VIVVRTe1czYnMxdDNOeTRfVnUxTjNyYThMM30K');
-
+    $pages='xss';
     include '../main/header.php';
     
 ?>

@@ -1,32 +1,41 @@
-<?php include 'header.php'; ?>
-    <br><br>
-    <div>
-        <h1><b>Parameter Tampering</b></h1>
+<?php $pages='parameter';
+include'../main/header.php';?> 
+        <section class="site-section bg-light aos-init aos-animate">
+    <div class="row align-items-center justify-content-center">
+        <h1 style="color:black ; margin-bottom: 30px;"><b>Parameter Tampering</b></h1>
     </div>
-    <div class="border">
-        <div class="Title">
-            <b><h1>Register</h1></b>
-        </div>
-        <form action="register.php" method="POST">
-            <div class="name">
-                Name
-                <input class="rounded"type="text" name="name"><br/>
+        <form action="register.php" method="POST" class="p-5 bg-white">
+            <div class="container col-md-6">
+            <h2 class="h4 text-black mb-5">Register</h2> 
+            <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="name">Name</label> 
+                  <input type="text" name="name" class="form-control">
+                </div>
+              </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" name="email" class="form-control">
+                </div>
+              </div>
+              <div class="row form-group">
+              <div class="col-md-12">
+                  <label class="text-black" for="password">Password</label> 
+                  <input type="password" name="password" class="form-control">
+                </div>
+              </div>
+            <div class="col-md-12">
+                <button class="btn btn-primary btn-md text-white"type="submit">Login</button>
             </div>
-            <div class="email">
-                Email
-                <input class="rounded" type="email" name="email"><br/>
+            <div class="col-md-12 row align-items-center justify-content-center">
+            <p style="margin: 20px 0px;">have an account? <a href="register.php">Login now!</a></p>
             </div>
-            <div class="password">
-                Password
-                <input class="rounded" type="password" name="password"><br/>
-            </div>
-            <div class="submitdiv">
-                <button class="black"type="submit">Register</button>
             </div>
         </form>
-        <div>
-            <p style="margin-left: 30%; margin-top: 20px;">have an account? <a href="index.php">Login now!</a></p>
-        </div>
+        
+    </section>
+        <?php include '../main/footer.php' ?>
 <?php
 $dbserver = "localhost";
 $dbname= "ceh";

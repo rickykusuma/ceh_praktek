@@ -1,5 +1,4 @@
 <?php
-    setcookie('flag','64_Q0VIVVRTe1czYnMxdDNOeTRfVnUxTjNyYThMM30K');
     $pages='sql';
     $main = "WELCOME HACKER";
     include '../main/header.php';

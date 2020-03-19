@@ -74,5 +74,6 @@
         $conn -> close();
         ?>
     </div>
-</body>
-</html>
+    <?php
+        include '../main/footer.php';
+    ?>

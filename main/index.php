@@ -14,5 +14,4 @@ include 'header.php';?>
         <h2><b>Ricky Andrianto Kusuma</b></h2>
     </div>
     <?php include 'footer.php' ?>
-</body>
-</html>
+

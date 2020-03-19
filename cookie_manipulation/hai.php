@@ -20,5 +20,6 @@
 		    echo "<script>window.location.href='index.php'</script>";
 		}
 		?>
-	</body>
-</html>
+		  <?php
+        include '../main/footer.php';
+    ?>

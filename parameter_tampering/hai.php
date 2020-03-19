@@ -20,5 +20,5 @@ include '../main/header.php';?>
     <h1><b>Parameter Tampering</b></h1>
 </div>
 <?php
-	
-?>
+        include '../main/footer.php';
+    ?>

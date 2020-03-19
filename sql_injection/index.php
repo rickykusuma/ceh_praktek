@@ -38,7 +38,7 @@
                         <img class="" src="../gambar/'.$row[2].'"style="width:100%; height:200px" alt='.$row[2].'>
                         <div class="">
                             <p class="">'.$row[0].'</>';
-                            if(is_int($row[1])){
+                            if(1000 - ((float)$row[1])/100 < 0){
                                 echo '<h4>Rp '.number_format ( $row[1] , 0,  "," , "." ).',00</h4>';
                             }else{
                                 echo '<h4>Rp '.$row[1].',00</h4>';
@@ -59,7 +59,7 @@
                                     <img class="" src="../gambar/'.$row[2].'"style="width:100%; height:200px" alt='.$row[2].'>
                                     <div class="">
                                         <p class="">'.$row[0].'</>';
-                                        if(is_int($row[1])){
+                                        if(1000 - ((float)$row[1])/100 < 0){
                                             echo '<h4>Rp '.number_format ( $row[1] , 0,  "," , "." ).',00</h4>';
                                         }else{
                                             echo '<h4>Rp '.$row[1].',00</h4>';

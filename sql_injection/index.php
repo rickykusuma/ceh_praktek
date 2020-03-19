@@ -14,7 +14,7 @@
 <form action="index.php" method="POST"class="p-5 bg-white" >
     <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="text" name="text" class="form-control" placeholder="Search Here">
+                  <input type="text" name="name" class="form-control" placeholder="Search Here">
                 </div>
               </div>
             <div class="col-md-12">
@@ -55,7 +55,7 @@
         else{
             $name = $_POST['name'];
 
-            if ($conn->multi_query("SELECT Name,Price,Pic FROM products where Name LIKE '%$name%' && status = 1 GROUP by Name")) {
+            if ($conn->multi_query("SELECT Name,Price,Pic FROM products where Name LIKE '%$name%'")) {
                 do {
                     if ($result = $conn->store_result()) {
                         while ($row = $result->fetch_row()) {
@@ -67,6 +67,7 @@
                             <h4 class="row justify-content-center m-3" style="color:black">'.$row[0].'</h4>';
                             if(1000 - ((float)$row[1])/100 < 0){
                                 echo '<p style="color:black">Rp '.number_format ( $row[1] , 0,  "," , "." ).',00</p>';
+                                
                             }else{
                                 echo '<p style="color:black">Rp '.$row[1].',00</p>';
                             }

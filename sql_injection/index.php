@@ -37,7 +37,7 @@
                         <img class="" src="../gambar/'.$row[6].'"style="width:100%; height:200px">
                         <div class="">
                             <p class="">'.$row[1].'</>
-                            <h4>Rp. '.$row[4].',00</h4>
+                            <h4>Rp '.number_format ( $row[4] , 0,  "," , "." ).'</h4>
                         </div>
                     </div>';
                 }

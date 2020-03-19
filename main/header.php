@@ -11,7 +11,8 @@
    </style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-<?php require_once "asset.php"  ?>
+<?php require_once "asset.php";  
+$main = "WELCOME HACKER"?>
   <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">
@@ -37,11 +38,11 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="../main" class="nav-link <?php if($pages=='home'){echo 'active';}?>">Home</a></li>
-                <li><a href="../cookie_manipulation" class="nav-link <?php if($pages=='cookie'){echo 'active';}?>">Cookie Manipulation</a></li>
-                <li><a href="../parameter_tampering" class="nav-link <?php if($pages=='parameter'){echo 'active';}?>">Parameter Tempering</a></li>
-                <li><a href="../sql_injection" class="nav-link <?php if($pages=='sql'){echo 'active';}?>">Sql Injection</a></li>
-                <li><a href="../xss" class="nav-link <?php if($pages=='xss'){echo 'active';}?>">XSS</a>
+                <li><a href="../main/" class="nav-link <?php if($pages=='home'){echo 'active';}?>">Home</a></li>
+                <li><a href="../cookie_manipulation/" class="nav-link <?php if($pages=='cookie'){echo 'active';}?>">Cookie Manipulation</a></li>
+                <li><a href="../parameter_tampering/" class="nav-link <?php if($pages=='parameter'){echo 'active';}?>">Parameter Tempering</a></li>
+                <li><a href="../sql_injection/" class="nav-link <?php if($pages=='sql'){echo 'active';}?>">Sql Injection</a></li>
+                <li><a href="../xss/" class="nav-link <?php if($pages=='xss'){echo 'active';}?>">XSS</a>
               </ul>
             </nav>
           </div>

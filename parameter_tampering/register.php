@@ -1,4 +1,5 @@
 <?php $pages='parameter';
+$main = "WELCOME HACKER";
 include'../main/header.php';?> 
         <section class="site-section bg-light aos-init aos-animate">
     <div class="row align-items-center justify-content-center">

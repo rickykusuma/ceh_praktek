@@ -1,4 +1,7 @@
-<?php include '../main/header.php'; ?>
+<?php 
+ $pages='cookie';
+ $main = "WELCOME HACKER";
+include '../main/header.php'; ?>
 <section class="site-section bg-light aos-init aos-animate">
     <div class="row align-items-center justify-content-center">
         <h1 style="color:black ; margin-bottom: 30px;"><b>Cookie Manipulation</b></h1>

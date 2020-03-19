@@ -12,7 +12,7 @@
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <?php require_once "asset.php";  
-$main = "WELCOME HACKER"?>
+?>
   <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">

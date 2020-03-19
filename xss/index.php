@@ -1,6 +1,7 @@
 <?php
     setcookie('flag','64_Q0VIVVRTe1czYnMxdDNOeTRfVnUxTjNyYThMM30K');
     $pages='xss';
+    $main = "WELCOME HACKER";
     include '../main/header.php';
 
 ?>

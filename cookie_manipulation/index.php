@@ -29,6 +29,7 @@
             }
         }
         $pages='cookie';
+        $main = "WELCOME HACKER";
         include '../main/header.php';
     ?>
      <section class="site-section bg-light aos-init aos-animate">

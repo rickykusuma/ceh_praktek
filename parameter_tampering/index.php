@@ -5,6 +5,7 @@ $dbuser = "root";
 $dbpw = "";
 $conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
 $pages='parameter';
+$main = "WELCOME HACKER";
 include'../main/header.php';?>
     <section class="site-section bg-light aos-init aos-animate">
     <div class="row align-items-center justify-content-center">

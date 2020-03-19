@@ -10,7 +10,7 @@ if(isset($_GET['sid'])){
 	$result = $conn->query($sql);
 
 	while($row = $result -> fetch_assoc()){
-		
+		$main = "Welcome ".$row['name'];
 	}
 } 
 $pages='parameter';

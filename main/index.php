@@ -1,5 +1,6 @@
 <?php
 $pages='home';
+$main = "WELCOME HACKER";
 include 'header.php';?>
    <style>
        .hacker{

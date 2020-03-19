@@ -1,8 +1,4 @@
 		<?php
-		$pages='cookie';
-		include '../main/header.php'?>
-        <br><br>
-		<?php
 		$dbserver = "localhost";
 		$dbname= "ceh";
 		$dbuser = "root";
@@ -14,12 +10,12 @@
 		    $result = $conn->query($sql);
 
 		    while($row = $result -> fetch_assoc()){
-		        echo "<h1><b>Halo, ".$row['name']."</b></h1>";
+				$main = "Welcome ".$row['name'];
 		    }
 		} else {
 		    echo "<script>window.location.href='index.php'</script>";
 		}
-		?>
-		  <?php
+		$pages='cookie';
+		include '../main/header.php';
         include '../main/footer.php';
     ?>

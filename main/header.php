@@ -4,7 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>UTS CEH PRAKTEK</title>
-    
+        <style>
+       .hacker{
+        background-image: url(../images/test.jpg);
+       }
+   </style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <?php require_once "asset.php"  ?>
@@ -18,13 +22,13 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-   
-    
+
+
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 
       <div class="container">
         <div class="row align-items-center">
-          
+
           <div class="col-6 col-xl-2">
             <h1 class="mb-0 site-logo"><a href="../main" class="mb-0">CEH 2</a></h1>
           </div>
@@ -44,29 +48,28 @@
 
 
           <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle float-right"><span class="icon-menu h3"></span></a></div>
-        
+
         </div>
       </div>
-      
+
     </header>
     <div class="site-blocks-cover overlay hacker" data-aos="fade" id="home-section">
 
-<div class="container">
-  <div class="row align-items-center justify-content-center">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
 
-    
-    <div class="col-md-8 mt-lg-5 text-center">
-      <h1 class="text-uppercase mb-5" data-aos="fade-up" style="letter-spacing: 3px"><?php echo $main?></h1>
-      
-      <div data-aos="fade-up" data-aos-delay="100">
-        <h2 class="mb-5"><?php echo $h2?></>
+
+          <div class="col-md-8 mt-lg-5 text-center">
+            <h1 class="text-uppercase mb-5" data-aos="fade-up" style="letter-spacing: 3px"><?php echo $main?></h1>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+              <h2 class="mb-5"><?php echo $h2?></>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-      
-  </div>
-</div>
-
-      </div>
             <script>
                 var header = document.getElementById("test");
                 var btns = header.getElementsByClassName("li");

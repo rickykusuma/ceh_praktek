@@ -1,9 +1,9 @@
 <?php
-$pages='home'; 
+$pages='home';
 include 'header.php';?>
    <style>
        .hacker{
-        background-image: url(images/test.jpg);
+        background-image: url(../images/test.jpg);
        }
    </style>
     <div class="container" style="text-align: center; margin: 5% auto;">

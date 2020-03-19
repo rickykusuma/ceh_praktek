@@ -38,6 +38,7 @@
     <div class="row align-items-center justify-content-center">
         <h1 style="color:black ; margin-bottom: 30px;"><b>Cookie Manipulation</b></h1>
     </div>
+    <div class="container">
         <form action="index.php" method="POST" class="p-5 bg-white">
             <div class="container col-md-6">
             <h2 class="h4 text-black mb-5">Login</h2>
@@ -61,7 +62,7 @@
             </div>
             </div>
         </form>
-
+        </div>
     </section>
     <?php
         include '../main/footer.php';

@@ -7,6 +7,7 @@ include'../main/header.php';?>
     <div class="row align-items-center justify-content-center">
         <h1 style="color:black ; margin-bottom: 30px;"><b>Parameter Tampering</b></h1>
     </div>
+    <div class="container">
         <form action="register.php" method="POST" class="p-5 bg-white">
             <div class="container col-md-6">
             <h2 class="h4 text-black mb-5">Register</h2> 
@@ -32,11 +33,11 @@ include'../main/header.php';?>
                 <button class="btn btn-primary btn-md text-white"type="submit">Login</button>
             </div>
             <div class="col-md-12 row align-items-center justify-content-center">
-            <p style="margin: 20px 0px;">have an account? <a href="register.php">Login now!</a></p>
+            <p style="margin: 20px 0px;">have an account? <a href="index.php">Login now!</a></p>
             </div>
             </div>
         </form>
-        
+        </div>
     </section>
         <?php include '../main/footer.php' ?>
 <?php

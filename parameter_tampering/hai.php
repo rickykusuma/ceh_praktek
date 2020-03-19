@@ -14,11 +14,5 @@ if(isset($_GET['sid'])){
 	}
 } 
 $pages='parameter';
-include '../main/header.php';?>
-<br><br>
-<div>
-    <h1><b>Parameter Tampering</b></h1>
-</div>
-<?php
-        include '../main/footer.php';
-    ?>
+include '../main/header.php';
+include '../main/footer.php';?>

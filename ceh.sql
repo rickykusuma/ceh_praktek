@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2020 at 12:29 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.8
+-- Generation Time: Mar 23, 2020 at 08:02 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,46 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `ceh`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `Email` varchar(233) NOT NULL,
-  `Password` varchar(233) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`Email`, `Password`) VALUES
-('admin', 'admin');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `carts`
---
-
-CREATE TABLE `carts` (
-  `CartID` int(123) NOT NULL,
-  `Email` varchar(123) NOT NULL,
-  `ProductID` int(123) NOT NULL,
-  `Quantity` int(123) NOT NULL,
-  `size` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `carts`
---
-
-INSERT INTO `carts` (`CartID`, `Email`, `ProductID`, `Quantity`, `size`) VALUES
-(147, 'effendi@gmail.com', 18, 6, 45),
-(148, 'effendi@gmail.com', 19, 1, 43);
 
 -- --------------------------------------------------------
 
@@ -111,102 +71,10 @@ INSERT INTO `products` (`ProductID`, `Name`, `Category`, `Brand`, `Price`, `Quan
 -- --------------------------------------------------------
 
 --
--- Table structure for table `promo`
---
-
-CREATE TABLE `promo` (
-  `code` varchar(255) NOT NULL,
-  `discount` int(11) NOT NULL,
-  `deskripsi` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `promo`
---
-
-INSERT INTO `promo` (`code`, `discount`, `deskripsi`) VALUES
-('natal', 120000, 'promo natal 120.000 ribu');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sales`
---
-
-CREATE TABLE `sales` (
-  `SalesID` int(123) NOT NULL,
-  `Email` varchar(123) NOT NULL,
-  `Total_Price` int(123) NOT NULL,
-  `Address` varchar(233) NOT NULL,
-  `Date` date NOT NULL,
-  `Bank` varchar(13) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sales`
---
-
-INSERT INTO `sales` (`SalesID`, `Email`, `Total_Price`, `Address`, `Date`, `Bank`) VALUES
-(70, 'effendi@gmail.com', 14880000, 'UMN', '2019-12-13', 'BNI'),
-(72, 'effendi@gmail.com', 879000, 'UMN', '2019-12-13', 'BCA'),
-(74, 'effendi@gmail.com', 1003123, 'UMN Lobby C', '2019-12-13', 'BCA');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `sales_detail`
---
-
-CREATE TABLE `sales_detail` (
-  `SalesID` int(11) NOT NULL,
-  `ProductID` int(11) NOT NULL,
-  `Quantity` int(11) NOT NULL,
-  `Price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sales_detail`
---
-
-INSERT INTO `sales_detail` (`SalesID`, `ProductID`, `Quantity`, `Price`) VALUES
-(70, 4, 1, 15000000),
-(72, 19, 1, 999000),
-(74, 2, 1, 1123123);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `UserID` int(11) NOT NULL,
-  `Name` varchar(30) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Address` longtext NOT NULL,
-  `Phone_Number` varchar(23) NOT NULL,
-  `Password` varchar(255) NOT NULL,
-  `sid` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`UserID`, `Name`, `Email`, `Address`, `Phone_Number`, `Password`, `sid`) VALUES
-(1, 'a', 'a@a', 'a', 'wkwkwkwwk', '892812311', 'Q0VIVVRTO2FAYQ=='),
-(2, 'asd', 'asd@asd', 'asd', 'wkwkwkwwk', '8928123111', 'Q0VIVVRTO2FzZEBhc2Q='),
-(3, 'CEHUTS{W3bs1t3Ny4_Vu1N3ra8L3}', 'flag', 'ajwlkjdaolihfkuesghnmsdlhtiuneskjmhfn3u24ijkt23h892u3r89iuk2oorufj483w90iokeufjf8093oi24hjn32i1r87uf4fhjen', 'wkwkwkwwk', '892822311', 'Q0VIVVRTO2ZsYWc='),
-(15, 'Aaron', 'effendi@gmail.com', 'UMN', '08214455623', 'a8f5f167f44f4964e6c998dee827110c', ''),
-(16, 'Dobleh', 'asa@umn.ac.id', 'UMN Lobby C', '082144556231', '4c86d513ee2cf4fce8c262cdd7efd358', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users1`
---
-
-CREATE TABLE `users1` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -214,10 +82,10 @@ CREATE TABLE `users1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users1`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `users1` (`name`, `email`, `password`, `sid`) VALUES
+INSERT INTO `users` (`name`, `email`, `password`, `sid`) VALUES
 ('a', 'a@a', 'a', 'Q0VIVVRTO2FAYQ=='),
 ('asd', 'asd@asd', 'asd', 'Q0VIVVRTO2FzZEBhc2Q='),
 ('CEHUTS{W3bs1t3Ny4_Vu1N3ra8L3}', 'flag', 'ajwlkjdaolihfkuesghnmsdlhtiuneskjmhfn3u24ijkt23h892u3r89iuk2oorufj483w90iokeufjf8093oi24hjn32i1r87uf4fhjen', 'Q0VIVVRTO2ZsYWc=');
@@ -227,39 +95,15 @@ INSERT INTO `users1` (`name`, `email`, `password`, `sid`) VALUES
 --
 
 --
--- Indexes for table `carts`
---
-ALTER TABLE `carts`
-  ADD PRIMARY KEY (`CartID`);
-
---
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`ProductID`);
 
 --
--- Indexes for table `promo`
---
-ALTER TABLE `promo`
-  ADD PRIMARY KEY (`code`);
-
---
--- Indexes for table `sales`
---
-ALTER TABLE `sales`
-  ADD PRIMARY KEY (`SalesID`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`UserID`);
-
---
--- Indexes for table `users1`
---
-ALTER TABLE `users1`
   ADD PRIMARY KEY (`email`);
 
 --
@@ -267,28 +111,10 @@ ALTER TABLE `users1`
 --
 
 --
--- AUTO_INCREMENT for table `carts`
---
-ALTER TABLE `carts`
-  MODIFY `CartID` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
-
---
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `ProductID` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
--- AUTO_INCREMENT for table `sales`
---
-ALTER TABLE `sales`
-  MODIFY `SalesID` int(123) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `UserID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

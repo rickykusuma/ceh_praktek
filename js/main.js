@@ -276,7 +276,6 @@ jQuery(document).ready(function($) {
 		if ( $('.datepicker').length > 0 ) {
 			$('.datepicker').datepicker();
 		}
-
 	};
 	siteDatePicker();
 

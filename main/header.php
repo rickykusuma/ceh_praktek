@@ -53,7 +53,7 @@
                 <li><a href="../cookie_manipulation/" class="nav-link <?php if($pages=='cookie'){echo 'active';}?>">Cookie Manipulation</a></li>
                 <li><a href="../parameter_tampering/" class="nav-link <?php if($pages=='parameter'){echo 'active';}?>">Parameter Tempering</a></li>
                 <li><a href="../sql_injection/" class="nav-link <?php if($pages=='sql'){echo 'active';}?>">Sql Injection</a></li>
-                <li><a href="../xss/" class="nav-link <?php if($pages=='xss'){echo 'active';}?>">XSS</a>
+                <li><a href="../xss/" class="nav-link <?php if($pages=='xss'){echo 'active';}?>">XSS</a></li>
               </ul>
             </nav>
           </div>

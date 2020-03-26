@@ -1,68 +1,67 @@
 <?php
-$dbserver = "localhost";
-$dbname= "ceh";
-$dbuser = "root";
-$dbpw = "";
-$conn = new mysqli($dbserver,$dbuser,$dbpw,$dbname);
-$pages='parameter';
-$main = "WELCOME <b class='hacked' style='color:red; margin:5px;'>HACKER</b>";
-$lg=false;
-$h2="Try your Parameter Tempering skill here and find the <b style='color:red'>FLAG</b> here"; 
+    include '../main/conn.php';
+    $pages = 'parameter';
+    $main = "WELCOME <b class='hacked' style='color:red; margin:5px;'>HACKER</b>";
+    $lg = false;
+    $h2 = "Try your Parameter Tempering skill here and find the <b style='color:red'>FLAG</b> here"; 
 
-include'../main/header.php';?>
-    <section class="site-section bg-light aos-init aos-animate">
+    include '../main/header.php';
+?>
+
+<section class="site-section bg-light aos-init aos-animate">
     <div class="row align-items-center justify-content-center">
         <h1 style="color:black ; margin-bottom: 30px;"><b>Parameter Tampering</b></h1>
     </div>
     <div class="container">
         <form action="index.php" method="POST" class="p-5 bg-white">
             <div class="container col-md-6">
-            <h2 class="h4 text-black mb-5">Login</h2> 
-            <div class="row form-group">
+                <h2 class="h4 text-black mb-5">Login</h2> 
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="text-black" for="email">Email</label> 
+                        <input type="email" name="email" class="form-control">
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <label class="text-black" for="password">Password</label> 
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                </div>
                 <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label> 
-                  <input type="email" name="email" class="form-control">
+                    <button class="btn btn-primary btn-md text-white"type="submit">Login</button>
                 </div>
-              </div>
-              <div class="row form-group">
-              <div class="col-md-12">
-                  <label class="text-black" for="password">Password</label> 
-                  <input type="password" name="password" class="form-control">
+                <div class="col-md-12 row align-items-center justify-content-center">
+                    <p style="margin: 20px 0px;">haven't an account? <a href="register.php">Register now!</a></p>
                 </div>
-              </div>
-            <div class="col-md-12">
-                <button class="btn btn-primary btn-md text-white"type="submit">Login</button>
-            </div>
-            <div class="col-md-12 row align-items-center justify-content-center">
-            <p style="margin: 20px 0px;">haven't an account? <a href="register.php">Register now!</a></p>
-            </div>
             </div>
         </form>
-        </div>
-    </section>
-    <?php include '../main/footer.php' ?>
-        <?php
-        if(isset($_POST['email'])&&isset($_POST['password'])){
-            $email = $_POST['email'];
-            $password = $_POST['password'];
-        
-            $sql = "SELECT * FROM users";
-            $result = $conn->query($sql);
-        
-            if($result->num_rows > 0){
-                while($row = $result -> fetch_assoc()){
-                    if($row['email'] == $email){
-                        if($row['password'] == $password){
-                            $sid = $row['sid'];
-                            echo "<script>window.location.href='hai.php?sid=".$sid."'</script>";
-                            break;
-                        }else{
-                            echo "<b style='color:red;'>wrong email or password</b>";
-                            break;
-                        }
-                    } 
-                }
-            } 
-        }
-        
-        ?>
+    </div>
+</section>
+
+<?php
+    include '../main/footer.php';
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $sql = "SELECT * FROM users";
+        $result = $conn->query($sql);
+
+        if ($result -> num_rows > 0) {
+            while($row = $result -> fetch_assoc()){
+                if($row['email'] == $email){
+                    if($row['password'] == $password){
+                        $sid = $row['sid'];
+                        echo "<script>window.location.href='hai.php?sid=".$sid."'</script>";
+                        break;
+                    }
+                    else {
+                        echo "<b style='color:red;'>wrong email or password</b>";
+                        break;
+                    }
+                } 
+            }
+        } 
+    }
+?>
